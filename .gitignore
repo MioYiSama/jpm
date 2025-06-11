@@ -1,0 +1,8 @@
+**/.DS_Store
+
+/node_modules
+/dist
+/jpm
+
+!jpm/jpm.json
+pnpm-lock.yaml

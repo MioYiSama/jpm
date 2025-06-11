@@ -1,0 +1,26 @@
+{
+  "name": "jpm",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsdown --watch",
+    "build": "tsdown && ts-json-schema-generator --path src/schema/index.ts --type Schema --out dist/schema.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "oxlint": "^1.0.0",
+    "ts-json-schema-generator": "^2.4.0",
+    "tsdown": "^0.12.7",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "commander": "^14.0.0"
+  }
+}
