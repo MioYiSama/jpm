@@ -1,16 +1,19 @@
 import { program } from "commander";
-import * as path from "node:path";
-import { createBuild } from "./fs/build";
-import { readSchema } from "./fs/schema";
-import { createSrc } from "./fs/src";
+import fs from "node:fs/promises";
+import path from "node:path";
+import { ProjectGenerator } from "./generator/ProjectGenerator";
+import { Schema } from "./schema";
 
 program.argument("[file]", "Path to the schema file", "jpm.json");
 program.parse();
 
 const [file] = program.args;
 
-const schema = await readSchema(file);
+const text = await fs.readFile(file, {
+  encoding: "utf-8",
+});
+
+const schema = JSON.parse(text) as Schema;
 const dir = path.dirname(path.resolve(file));
 
-await createSrc(dir, schema);
-await createBuild(dir, schema);
+new ProjectGenerator(schema).generate(dir);

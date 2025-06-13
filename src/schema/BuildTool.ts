@@ -2,12 +2,10 @@ type BuildToolBase<T extends string> = {
   buildTool: T;
 };
 
-type Gradle = BuildToolBase<"gradle"> & {
-  gradle: {};
-};
+type Gradle = BuildToolBase<"gradle"> & {};
 
-type Maven = BuildToolBase<"maven"> & {
-  maven: {};
-};
+type Maven = BuildToolBase<"maven"> & {};
 
-export type BuildTool = Gradle | Maven;
+type BuildTool = Gradle | Maven;
+
+export { BuildTool };

@@ -1,9 +1,11 @@
-export type ProjectID = {
+type ProjectID = {
   group: string;
   name: string;
 };
 
-export type Project = ProjectID & {
+type Project = ProjectID & {
   version: string;
   jdk: number;
 };
+
+export { Project, ProjectID };

@@ -4,5 +4,4 @@
 /dist
 /jpm
 
-!jpm/jpm.json
 pnpm-lock.yaml

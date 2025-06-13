@@ -1,4 +1,4 @@
-import { Args } from "./Args";
+import { Args } from "./util";
 
 type ProjectTypeBase<T extends string> = {
   type: T;
@@ -6,21 +6,12 @@ type ProjectTypeBase<T extends string> = {
 
 type Application = ProjectTypeBase<"application"> & {
   application: {
-    mainClass: string;
+    mainClass?: string;
     jvmArgs?: Args;
     runtimeArgs?: Args;
   };
 };
 
-type Library = ProjectTypeBase<"library"> & {
-  library: {};
-};
+type Library = ProjectTypeBase<"library"> & {};
 
-// type Workspace = ProjectTypeBase<"workspace"> & {
-//   workspace: {
-//     members: string[];
-//   };
-// };
-
-// export type ProjectType = Application | Library | Workspace;
 export type ProjectType = Application | Library;
