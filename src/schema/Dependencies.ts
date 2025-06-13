@@ -8,7 +8,7 @@ type Dependencies = {
   dependencies?: {
     main?: Dependency[];
     test?: Dependency[];
-    versions: Record<string, string>;
+    versions?: Record<string, string>;
   };
 };
 

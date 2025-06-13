@@ -4,12 +4,10 @@ import { Dependencies } from "./Dependencies";
 import { Project } from "./Project";
 import { ProjectType } from "./ProjectType";
 
-type Schema = Project &
+export type Schema = Project &
   ProjectType &
   Dependencies &
   BuildTool &
   Addons & {
     $schema?: string;
   };
-
-export { Schema };

@@ -14,4 +14,6 @@ type Application = ProjectTypeBase<"application"> & {
 
 type Library = ProjectTypeBase<"library"> & {};
 
-export type ProjectType = Application | Library;
+type ProjectType = Application | Library;
+
+export { ProjectType };
